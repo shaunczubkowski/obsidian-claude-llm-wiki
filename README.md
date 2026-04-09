@@ -21,18 +21,35 @@ Each ingest ends with a `git commit`, so any ingest is reversible with a single 
 
 ## Prerequisites
 
-- [Obsidian](https://obsidian.md) v1.12.7+ — open this folder as a vault
-- [Claude Code](https://claude.ai/code) — run from this directory
-- git — required for per-ingest commits and rollback
+- [Obsidian](https://obsidian.md) v1.12.7+
+- [Claude Code](https://claude.ai/code)
+- git _(optional — only needed for per-ingest commits and rollback)_
 
-## Quick start
+**Recommended community plugin:** [Terminal](https://github.com/polyipseity/obsidian-terminal) — adds a terminal inside Obsidian so you can run Claude Code without switching to a separate app. Install it via **Settings → Community plugins → Browse → search "Terminal"**.
 
-1. Clone or use this template on GitHub
-2. Open the folder as an Obsidian vault
-3. Open Claude Code in this directory: `claude`
-4. Drop a document into `raw/` — any `.md`, article, transcript, etc.
-5. Tell Claude: `ingest raw/<your-file>.md`
-6. Claude will discuss key takeaways, build the wiki pages, and commit
+## Getting started
+
+### Simple (no git required)
+
+1. On this GitHub page, click **Code → Download ZIP**
+2. Unzip the file to wherever you keep your notes
+3. Open Obsidian → **Open folder as vault** → select the unzipped folder
+4. Open a terminal in that folder and run `claude`
+5. Drop a document into `raw/` and tell Claude: `ingest raw/<your-file>.md`
+
+### Advanced (with git)
+
+Using git gives you per-ingest commits and one-command rollback.
+
+1. On this GitHub page, click **Use this template → Create a new repository** to get your own copy, then clone it:
+   ```bash
+   git clone https://github.com/<you>/<your-repo>.git
+   cd <your-repo>
+   ```
+2. Open the folder as an Obsidian vault: **Obsidian → Open folder as vault**
+3. Run Claude Code from that directory: `claude`
+4. Drop a document into `raw/` and tell Claude: `ingest raw/<your-file>.md`
+5. Claude builds the wiki pages and commits — repeat for each source
 
 A worked example is already in the wiki — the `LLM Wiki methodology` ingest — showing exactly what the output looks like.
 
@@ -60,6 +77,21 @@ Full workflow details are in `CLAUDE.md`.
 The `CLAUDE.md` file contains the full agent schema — page formats, workflow steps, naming conventions, and quality rules. Edit it to adjust how Claude structures pages or what it prioritizes.
 
 To rename the vault, rename this folder and update the iCloud path in `CLAUDE.md` if using Obsidian Sync.
+
+## Contributing
+
+Contributions are welcome. The goal is to keep the template general-purpose and domain-agnostic.
+
+**In scope:**
+- Improvements to the `CLAUDE.md` schema (clearer instructions, better page formats, edge case handling)
+- README and documentation clarity
+- Better or additional example sources in `raw/`
+
+**Out of scope:**
+- Changes that make the template opinionated toward a specific topic or domain
+- Adding dependencies or required plugins
+
+To contribute: open an issue to discuss the change first, then submit a PR.
 
 ## Credits
 
