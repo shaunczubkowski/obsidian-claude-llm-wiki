@@ -1,0 +1,18 @@
+# Obsidian config — personal to each user's setup, generated automatically
+.obsidian/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V3
+.Trashes
+
+# iCloud sync artifacts
+*.icloud
+.iCloud
+
+# Raw asset attachments — often large binaries, gitignore by default
+# Remove this line if you want to track attachments in git
+raw/assets/*
+!raw/assets/.gitkeep
